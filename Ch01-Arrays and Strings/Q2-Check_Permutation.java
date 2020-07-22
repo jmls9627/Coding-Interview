@@ -23,4 +23,25 @@
           java.util.Arrays.sort(arr);   // sorts the array alphabetically
           return new String(arr);       // return the new word
       }
+
+      ///////////////////////////////////////////////////////////////////////////////
+      
+      public static boolean CheckPermutation2(String st1, String st2){
+        if(st1.length()!=st2.length())
+            return false;
+
+        int [] arr= new int [128];
+        for(int i=0; i<st1.length();i++){
+           int val1=st1.charAt(i);
+           int val2=st2.charAt(i);
+            arr[val1]+=1;
+            arr[val2]+=1;
+        }
+        
+        for (int i=0;i<arr.length;i++){
+            if(arr[i]%2!=0)
+              return false;        
+    }
+        return true;
+    }
 }
