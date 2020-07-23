@@ -1,13 +1,4 @@
-package isunique;
-/**
- *
- * @author jmls9
- */
-public class IsUnique {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
         String[] words = {"abcde", "hello", "apple", "kite", "padle"};
