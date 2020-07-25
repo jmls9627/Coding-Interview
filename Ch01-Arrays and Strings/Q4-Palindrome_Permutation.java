@@ -1,6 +1,7 @@
 public static void main(String[] args) {
     // TODO code application logic here  
      String word1="tact coa";
+     String [] words={"tact coa","atco cat","cota tac"};
      
     System.out.println(PalindromePermutation(word1)); 
 }
