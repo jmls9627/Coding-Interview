@@ -12,7 +12,6 @@ public static void main(String[] args) {
    char elem=s2.charAt(0);
    int cant=0;  
    int pos=0;
-   char [] arr=s2.toCharArray();
 
 if(s1.length()==s2.length()){    //if these are equals cant+1 
      for(int i=0;i<s1.length();i++){
@@ -31,7 +30,7 @@ if(s1.length()==s2.length()){    //if these are equals cant+1
              cant++;
          } 
         if(elem==s1.charAt(i)){
-            if(pos<s2.length()-1){
+            if(pos<s2.length()-1){//always that pos be in the size
                 pos++;
                  } 
                 elem=s2.charAt(pos);                
