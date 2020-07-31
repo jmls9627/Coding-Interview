@@ -1,8 +1,9 @@
 public static void main(String[] args) {
     // TODO code application logic here  
-     String word1=" Mr Jhon Wick El Durako ";
+     String word1="Mr Jhon Wick El Durako";
    
      URLify(word1); 
+     URLify2(word1);
 }
 
   public static void URLify(String s){
@@ -29,5 +30,20 @@ public static void main(String[] args) {
          
      }    
      System.out.print(s1);
-  }  
+  } 
+  
+  ////////////////////////////////////////////////////////////////////////////////////
+  
+  public static void URLify2(String s){
+    String word="";
+    String concat="%20";
+     
+   for(int i=0;i<s.length();i++){
+       if(s.charAt(i)==' ')
+         word+=concat;
+    
+       else word+=s.charAt(i);  
+   }    
+   System.out.print(word);
+}  
 }
