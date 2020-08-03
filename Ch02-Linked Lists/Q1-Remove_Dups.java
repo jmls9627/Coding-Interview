@@ -64,3 +64,19 @@ System.out.println(p);
  }
 
 }
+////////////////////////////////////////////////////////////////////////////////////////// {1,2,1,3,4,4,4,5,5};
+public static void Remove_Dups3(LinkedListNode head) {
+    LinkedListNode current = head;
+    while (current != null) {
+        /* Remove all future nodes that have the same value */
+        LinkedListNode runner = current;
+        while (runner.next != null) { 
+            if (runner.next.data == current.data) {
+                runner.next = runner.next.next;
+            } else {
+                runner = runner.next;
+            }
+        }
+        current = current.next;
+    }
+}	
