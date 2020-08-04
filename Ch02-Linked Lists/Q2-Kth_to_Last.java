@@ -1,5 +1,6 @@
 public class CH2Linked {
-   
+    public int value = 0;
+    
     public static void main(String[] args) {
         // TODO code application logic here
         int [] arr={1,2,3,4,5,6,7,8,9};
@@ -42,6 +43,23 @@ public class CH2Linked {
     } 
         return p2;   
     }
+    //////////////////////////////////////////////////////////////////////
+    public static LinkedListNode kthToLast(LinkedListNode head, int k) {
+        CH2Linked idx = new CH2Linked();
+     return kthToLast(head, k, idx);
+ }
+ 
+ public static LinkedListNode kthToLast(LinkedListNode head, int k, CH2Linked idx) {
+     if (head == null) {
+         return null;
+     }
+     LinkedListNode node = kthToLast(head.next, k, idx);
+     idx.value = idx.value + 1;
+     if (idx.value == k) {
+         return head;
+     } 
+     return node;
+ }	
 
 
 
