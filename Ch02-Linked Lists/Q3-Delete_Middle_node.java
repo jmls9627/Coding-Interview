@@ -13,6 +13,9 @@ public static void main(String[] args) {
     } 
 
 System.out.println(Delete_Middle_node(head).printForward());
+
+LinkedListNode nodeDel=head.next.next.next.next;
+System.out.println(Delete_Middle_node1(nodeDel, head));
 }
   
 
@@ -44,3 +47,18 @@ System.out.println(Delete_Middle_node(head).printForward());
 }
  return head;
 }
+//////////////////////////////////////////////////////////////
+
+ public static boolean Delete_Middle_node1(LinkedListNode nodeDel, LinkedListNode head){
+      
+     if(nodeDel==null || nodeDel.next==null){
+         return false;
+     }
+     LinkedListNode next =nodeDel.next;
+     nodeDel.data=next.data;
+     nodeDel.next=next.next;
+    // System.out.println(head.printForward()); 
+      return true;
+      
+     
+  }
