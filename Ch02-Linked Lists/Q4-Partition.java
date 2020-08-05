@@ -41,11 +41,29 @@ public class CH2Linked {
     }
        
      return head;
-       /* pointer=head; 
-          while(pointer!=null){
-          System.out.println(pointer.data);
-          pointer=pointer.next;
-      }*/
   }
+  ////////////////////////////////////////////////////////////////////////////
+  public static LinkedListNode Partition1(LinkedListNode node, int x) {
+    LinkedListNode head = node;
+    LinkedListNode tail = node;
+    
+    /* Partition list */
+    while (node != null) {                  
+        LinkedListNode next = node.next;                       
+        if (node.data < x) {                            
+            /* Insert node at head. */
+            node.next = head;
+            head = node;                           
+        } else {
+                  /* Insert node at tail. */
+            tail.next = node;
+            tail = node;                          
+        }	
+        node = next;                      
+    }
+    tail.next = null;
+    
+    return head;
+}
 }
 	
