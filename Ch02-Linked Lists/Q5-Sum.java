@@ -6,30 +6,34 @@ public class CH2Linked {
         LinkedListNode first = new LinkedListNode(arr[0],null,null);
         LinkedListNode head = first;
         LinkedListNode second =first;
-        
+        LinkedListNode last =first;
+
         for(int i=1;i<arr.length;i++){
             second=new LinkedListNode(arr[i],null,null);
             first.setNext(second);
             second.setPrevious(first);
             first=second;
+            last.last =second;
         } 
 
           int [] arr1={2,9,5};
         LinkedListNode first1 = new LinkedListNode(arr1[0],null,null);
         LinkedListNode head1 = first1;
         LinkedListNode second1 =first1;
+        LinkedListNode last1 =first;
       
         for(int i=1;i<arr1.length;i++){
             second1=new LinkedListNode(arr1[i],null,null);
             first1.setNext(second1);
             second1.setPrevious(first1);
             first1=second1;
+            last1.last =second1;
         } 
    
         SumForward(head, head1);
         SumBackward(head, head1);
 }
-      
+      /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
      public static LinkedListNode SumForward (LinkedListNode head, LinkedListNode head1){
        String val="";
        String val1="";
@@ -69,8 +73,8 @@ public class CH2Linked {
   public static LinkedListNode SumBackward (LinkedListNode head, LinkedListNode head1){
     String val="";
     String val1="";
-    LinkedListNode p1 =head.last.next;
-    LinkedListNode p2 =head1.last.next;
+    LinkedListNode p1 =head.last;
+    LinkedListNode p2 =head1.last;
  
      while(p1!=null){
          val+=p1.data;
