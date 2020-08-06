@@ -48,18 +48,18 @@ public class CH2Linked {
     LinkedListNode tail = node;
     
     /* Partition list */
-    while (node != null) {                  
-        LinkedListNode next = node.next;                       
-        if (node.data < x) {                            
-            /* Insert node at head. */
-            node.next = head;
-            head = node;                           
+    while (node != null) {                  //     3,5,8,5,10,2,1
+        LinkedListNode next = node.next;    //(0)next=5   (1)next=8  (2)next=5    (3)next=10     (4)next=2   (5)next=1      (6)next=null
+        if (node.data < x) {                //(0) 3<5     (1)5<5         8<5          5<5            10<5       2<5               1<5
+            /* Insert node at head. */          
+            node.next = head;              //(0)5=3                                                             1=3             =1 
+             head = node;                  //(0) =3                                                              =2             =1
         } else {
                   /* Insert node at tail. */
-            tail.next = node;
-            tail = node;                          
+            tail.next = node;                            //(1)5=5       8=8           5=5         10=10
+            tail = node;                                 //(1) =5       =8             =5          =10
         }	
-        node = next;                      
+        node = next;                       //(0)3=5        (1)5=8       8=5           5=10        10=2         2=1
     }
     tail.next = null;
     
