@@ -19,6 +19,7 @@ public class CH2Linked {
        LinkedListNode node=null;
        LinkedListNode p1 =head;
        LinkedListNode p2 =head1;
+       
        if(p1.size == p2.size){
          node = NodeIntersection(p1, p2, c);
        }
@@ -47,6 +48,6 @@ public class CH2Linked {
        cont++;
        p1=p1.next;
        }
-     return p1;
+     return null;
      }   
   }
