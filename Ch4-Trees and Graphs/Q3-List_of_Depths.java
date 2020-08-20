@@ -4,6 +4,9 @@ public static void main(String[] args) {
     ArrayList<LinkedList<TreeNode>> list = createLevelLinkedList(root);
     printResult(list);
     }
+
+
+
    
     public static ArrayList<LinkedList<TreeNode>> createLevelLinkedList(TreeNode root) {
 		ArrayList<LinkedList<TreeNode>> lists = new ArrayList<>();
@@ -11,7 +14,7 @@ public static void main(String[] args) {
 		return lists;
 	}	
     
-      public static void createLevelLinkedList(TreeNode root, ArrayList<LinkedList<TreeNode>> lists, int level) {
+      public static void createLevelLinkedList(TreeNode root, ArrayList<LinkedList<TreeNode>> lists, int level) {//DFS
 		if (root == null) return;
 		LinkedList<TreeNode> list = null;
 		if (lists.size() == level) { // Level not contained in list
@@ -25,6 +28,35 @@ public static void main(String[] args) {
 		list.add(root);
 		createLevelLinkedList(root.left, lists, level + 1);
 		createLevelLinkedList(root.right, lists, level + 1);
+    }
+    
+
+
+    public static ArrayList<LinkedList<TreeNode>> createLevelLinkedListBFS(TreeNode root) {
+		ArrayList<LinkedList<TreeNode>> result = new ArrayList<>();
+		
+		/* "Visit" the root */
+		LinkedList<TreeNode> current = new LinkedList<>();
+		if (root != null) {
+			current.add(root);
+		}
+		
+		while (current.size() > 0) {
+			result.add(current); // Add previous level
+			LinkedList<TreeNode> parents = current; // Go to next level
+			current = new LinkedList<>(); 
+			for (TreeNode parent : parents) {
+				/* Visit the children */
+				if (parent.left != null) {
+					current.add(parent.left);
+				}
+				if (parent.right != null) {
+					current.add(parent.right);
+				}
+			}
+		}
+
+		return result;
 	}
        
       
