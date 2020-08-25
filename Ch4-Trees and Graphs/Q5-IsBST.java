@@ -1,5 +1,6 @@
 public class Ch4Trees_Graphs {
     static int index=0;
+    public static Integer lastPrinted = null;
    
     public static void main(String [] args) {
     int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -25,5 +26,28 @@ public class Ch4Trees_Graphs {
         index++;
         IsBST(root.right, arr);       
     }
-    
+    /////////////////////////////////////////////////////////////////////////
+
+    public static boolean checkBST1(TreeNode n) {
+		if (n == null) 
+			return true;
+		
+		// Check / recurse left
+		if (!checkBST1(n.left)) 
+			return false;
+		
+		// Check current
+		if (lastPrinted != null && n.data <= lastPrinted) 
+			return false;
+	
+		lastPrinted = n.data;
+		
+		// Check / recurse right
+		if (!checkBST1(n.right)) 
+			return false;
+		
+		return true;
+	}
+
+   
   }
