@@ -47,7 +47,25 @@ public class Ch4Trees_Graphs {
 			return false;
 		
 		return true;
-	}
+    }
+    ///////////////////////////////////////////////////////////////////////////////
+
+    public static boolean checkBST2(TreeNode n) {
+        return checkBST2( n, null, null);
+      }
+      
+       public static boolean checkBST2(TreeNode n,Integer min, Integer max) {
+        if(n==null) {
+           return true;
+        }
+        if((min!=null && n.data<=min)||(max!=null && max<=n.data)){
+            return false;
+        }
+        if( !checkBST2(n.left, min, n.data) || !checkBST2(n.right, n.data, max)){
+            return false;
+        }
+        return true;
+      }
 
    
   }
