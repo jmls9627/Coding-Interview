@@ -56,7 +56,9 @@ public class TreeNode {
 
 
      public static TreeNode CreateBinaryTree(int [] arr){
-        return CreateBinaryTree(arr,0,arr.length-1);
+        TreeNode root=CreateBinaryTree(arr,0,arr.length-1);
+        root.size=arr.length;
+        return root; 
     }
      
 public static TreeNode CreateBinaryTree(int[]arr,int start, int end){
@@ -65,10 +67,12 @@ public static TreeNode CreateBinaryTree(int[]arr,int start, int end){
         int mid=(start+end)/2;           
         TreeNode root=new TreeNode(arr[mid]);
         // System.out.println(root.data);
-        
-     root.left=CreateBinaryTree(arr, start, mid-1);
-        
-      root.right=CreateBinaryTree(arr, mid+1, end);
+    
+     root.setLeftChild(CreateBinaryTree(arr, start, mid-1));
+     
+     root.setRightChild(CreateBinaryTree(arr, mid+1, end));
+    
+      
         return root;
 
 }
