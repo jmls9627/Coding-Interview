@@ -3,7 +3,7 @@ public static void main(String [] args) {
     TreeNode root = TreeNode.CreateBinaryTree(arr);
      
      for (int i = 0; i < arr.length; i++) {
-	TreeNode node = root.find(arr[i]);
+	    TreeNode node = root.find(arr[i]);
         TreeNode next = inorderSucc(node);
 	  if (next != null) {
          	System.out.println(node.data + "->" + next.data);
@@ -20,7 +20,7 @@ public static void main(String [] args) {
 		// Found right children -> return left most node of right subtree
 		if (n.parent == null || n.right != null) { 
 			return leftMostChild(n.right); 
-		} else { 
+		}  else { 
 			TreeNode q = n;
 			TreeNode x = q.parent;
 			// Go up until we're on left instead of right
