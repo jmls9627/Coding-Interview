@@ -94,6 +94,25 @@ public static TreeNode getSibling(TreeNode node) {
     TreeNode parent = node.parent;
     return parent.left == node ? parent.right : parent.left;
 }
+///////////////////////////////////////////////////////////////////////////
+
+public static TreeNode commonAncestor( TreeNode p, TreeNode q) {
+    if ((p == null) || (q == null)) {
+        return null;
+    }
     
+    TreeNode ap = p.parent;
+    while (ap != null) {
+        TreeNode aq = q.parent;
+        while (aq != null) { 
+            if (aq == ap) {
+                return aq;
+            }
+            aq = aq.parent;
+        }
+        ap = ap.parent;
+    }
+    return null;
+}
 
 }
