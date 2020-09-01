@@ -18,7 +18,7 @@ public static TreeNode CommonAncestor(TreeNode x, TreeNode y){
    
    while(first != second && first!=null && second!=null){
        first=first.parent;
-       second=second.parent;
+       second=second.parent;  
    }
    return  first;
    

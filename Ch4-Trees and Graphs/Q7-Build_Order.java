@@ -8,7 +8,7 @@ public static void main(String [] args) {
     }
    
  }
-    
+    //it's not finished
    public static Graph createNewGraph(){
        Graph g = new Graph();        
        Node[] temp = new Node[6];
