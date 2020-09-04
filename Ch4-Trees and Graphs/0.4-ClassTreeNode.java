@@ -76,4 +76,17 @@ public static TreeNode CreateBinaryTree(int[]arr,int start, int end){
         return root;
 
 }
+
+public TreeNode getRandomNode() {
+    int leftSize = left == null ? 0 : left.size();
+    Random random = new Random();
+    int index = random.nextInt(size);
+    if (index < leftSize) {
+        return left.getRandomNode();
+    } else if (index == leftSize) {
+        return this;
+    } else {
+        return right.getRandomNode();
+    }
+}
 }
