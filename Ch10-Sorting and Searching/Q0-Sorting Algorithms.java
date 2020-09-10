@@ -7,8 +7,8 @@ public static void main(String[] args) {
         System.out.println( nums[i]);
     }
 }
-
-public static void BubbleSort(int [] a){       
+///// Best Case O(n)//////// Average Case O(n2)//////// Worst Case O(n2)///// 
+public static void BubbleSort(int [] a){                  
     for(int i=1;i<a.length;i++){
         for(int j=0;j<a.length-i;j++){
             if(a[j]>a[j+1]){
@@ -19,3 +19,16 @@ public static void BubbleSort(int [] a){
         }
     }
 }
+///// Best Case O(n)//////// Average Case O(n2)//////// Worst Case O(n2)///// 
+public static void InsertionSort(int [] a){       
+    for(int i=1;i<a.length;i++){
+        int aux=a[i];
+        int j=i-1;
+        while(j>=0 && aux < a[j]){
+           a[j+1]=a[j];
+           j--;
+        }    
+           a[j+1]=aux;
+            
+        }
+    }
