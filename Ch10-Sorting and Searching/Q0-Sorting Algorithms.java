@@ -32,3 +32,18 @@ public static void InsertionSort(int [] a){
             
         }
     }
+///// Best Case O(n2)//////// Average Case O(n2)//////// Worst Case O(n2)/////
+public static void SelectionSort(int [] a){       
+    for(int i=0;i<a.length-1;i++){
+        int menor=a[i];
+        int pos=i;
+        for(int j=i+1;j<a.length;j++){
+           if(a[j] < menor){
+               menor=a[j];
+               pos=j;
+           }
+        }
+           a[pos]=a[i];
+           a[i]=menor;
+        }         
+    }    
