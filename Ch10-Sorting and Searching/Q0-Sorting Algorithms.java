@@ -7,7 +7,9 @@ public static void main(String[] args) {
         System.out.println( nums[i]);
     }
 }
+
 ///// Best Case O(n)//////// Average Case O(n2)//////// Worst Case O(n2)///// 
+
 public static void BubbleSort(int [] a){                  
     for(int i=1;i<a.length;i++){
         for(int j=0;j<a.length-i;j++){
@@ -19,7 +21,9 @@ public static void BubbleSort(int [] a){
         }
     }
 }
+
 ///// Best Case O(n)//////// Average Case O(n2)//////// Worst Case O(n2)///// 
+
 public static void InsertionSort(int [] a){       
     for(int i=1;i<a.length;i++){
         int aux=a[i];
@@ -32,7 +36,9 @@ public static void InsertionSort(int [] a){
             
         }
     }
+
 ///// Best Case O(n2)//////// Average Case O(n2)//////// Worst Case O(n2)/////
+
 public static void SelectionSort(int [] a){       
     for(int i=0;i<a.length-1;i++){
         int menor=a[i];
@@ -96,4 +102,46 @@ public static void merge(int[] array, int[] helper, int low, int middle, int hig
     }
 }
     
-    }    
+    }   
+     
+/// Best Case O(n logn)//////// Average Case  O(n logn)//////// Worst Case  O(n2)//
+
+public static void quickSort(int[] arr, int left, int right) {
+    int index = partition(arr, left, right); 
+    if (left < index - 1) { // Sort left half
+        quickSort(arr, left, index - 1);
+    }
+    if (index < right) { // Sort right half
+        quickSort(arr, index, right);
+    }
+}
+
+public static int partition(int[] arr, int left, int right) {
+    int pivot = arr[left + (right - left) / 2]; // Pick a pivot point. Can be an element		
+    
+    while (left <= right) { // Until we've gone through the whole array
+        // Find element on left that should be on right
+        while (arr[left] < pivot) { 
+            left++;
+        }
+        
+        // Find element on right that should be on left
+        while (arr[right] > pivot) {
+            right--;
+        }
+        
+        // Swap elements, and move left and right indices
+        if (left <= right) {
+            swap(arr, left, right);
+            left++;
+            right--;
+        }
+    }
+    return left; 
+}
+
+public static void swap(int[] array, int i, int j) {
+    int tmp = array[i];
+    array[i] = array[j];
+    array[j] = tmp;
+}
