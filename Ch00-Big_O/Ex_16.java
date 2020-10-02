@@ -7,7 +7,7 @@ public static void permutation(String str) {
     permutation(str, "");
 }
 
-public static void permutation(String str, String prefix) {//O(n)
+public static void permutation(String str, String prefix) {//O(n*n!) =>wil not exceed O(n^2*n!)
     if (str.length() == 0) {
         System.out.println(prefix);
     } else {
