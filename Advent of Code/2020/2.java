@@ -120,8 +120,8 @@ public class AoCDay_2 {
         }
         cont=0; 
 }
-        System.out.println(contwords); 
-        System.out.println(validwords);
+        System.out.println(contwords);  //a
+        System.out.println(validwords); //b
 
 
  }

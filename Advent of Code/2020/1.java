@@ -38,7 +38,7 @@ public class AoCDay_1 {
     }  
     }  
 //}
-/* for(String i:Input){
+/* for(String i:Input){    //a
          for(int y=cont;y<Input.size();y++){
              int sum= Integer.parseInt(i)+Integer.parseInt(Input.get(y));               
              if(sum==2020){
