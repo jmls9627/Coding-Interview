@@ -2,7 +2,7 @@ public static void main(String[] args) {
     // TODO code application logic here
     int [] arr={1,2,1,3,4,4,4,5,5};
     String[]arr1={};
-    LinkedListNode first = new LinkedListNode(arr[0],null,null);
+    LinkedListNode first = new LinkedListNode(arr[0],null,null); //C_LinkedList(arr)
     LinkedListNode head = first;
     LinkedListNode second =first;
     
@@ -49,21 +49,40 @@ System.out.println(p);
 
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////
- public static void Remove_Dups2(LinkedListNode n){
+ public static void Remove_Dups2(LinkedListNode head){
  HashSet<Integer> set=new HashSet<Integer>();
  LinkedListNode pre=null;
  
- while(head!=null){
-     if(set.contains(head.data))
-        pre.next=head.next;
-     else{
-         set.add(head.data);
-         pre=head;
+ while(head!=null){                     //   while(head!=null){
+     if(set.contains(head.data))        //    if(!set.contains(head.data)){
+        pre.next=head.next;             //       set.add(head.data);
+     else{                              //     }
+         set.add(head.data);            //    head=head.next;
+         pre=head;                      // }
      }
      head=head.next;
  }
 
 }
+/////////////////////////////////////////////////////////////////////////
+
+public static LinkedListNode Remove_Dups21(LinkedListNode head){
+    HashSet<Integer> set=new HashSet<Integer>();
+    LinkedListNode pre=head;
+    set.add(head.data);
+
+    while(head.next!=null){                     
+        if(set.contains(head.next.data))       
+           pre.next=head.next.next;
+        else{                              
+            set.add(head.next.data);            
+            pre.next=head.next;                      
+        }
+        head=head.next;
+        pre=pre.next;
+    }
+   
+   }
 ////////////////////////////////////////////////////////////////////////////////////////// {1,2,1,3,4,4,4,5,5};
 public static void Remove_Dups3(LinkedListNode head) {
     LinkedListNode current = head;
