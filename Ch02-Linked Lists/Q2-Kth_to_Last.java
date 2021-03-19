@@ -29,7 +29,7 @@ public class CH2Linked {
         }
             return head;
         }
-            LinkedListNode p1 = head;
+            Link+edListNode p1 = head;
             LinkedListNode p2 = head;
         
          for (int i=0; i<k; i++){

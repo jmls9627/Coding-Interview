@@ -29,15 +29,15 @@ System.out.println(Delete_Middle_node1(nodeDel, head));
      p1=p1.next;     
      }  
 
-   p1=head; //pinting head
-   if(cont%2==0){     // if is even 10
-       half=(cont/2) -1;  //half=4       5-1
-   }else{
-       half=cont/2;   //  half=4
-   }
-   cont=1;   //reset
+   p1=head;                  //pointing head
+   if(cont%2==0)            // if is even 10
+       half=(cont/2) -1;       //half=4       5-1
+   else
+      half=cont/2;             //  half=4
+   
+   cont=1;                         //reset
 
- while(p1!=null){   //modify the next element
+ while(p1!=null){          //DEL the middle one
         if(cont==half){              
             p1.next=p1.next.next;            
             return head;
@@ -49,7 +49,7 @@ System.out.println(Delete_Middle_node1(nodeDel, head));
 }
 //////////////////////////////////////////////////////////////
 
- public static boolean Delete_Middle_node1(LinkedListNode nodeDel, LinkedListNode head){
+ public static boolean Delete_Middle_node1(LinkedListNode nodeDel, LinkedListNode head){// In this case we receive the middle node
       
      if(nodeDel==null || nodeDel.next==null){
          return false;
